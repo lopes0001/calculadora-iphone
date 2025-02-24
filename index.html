@@ -10,8 +10,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: black;
+            background-color: #d3d3d3;
             padding: 0;
+            margin: 0;
+            position: relative;
         }
         .calculator {
             width: 280px;
@@ -69,9 +71,17 @@
             border-radius: 30px;
             grid-column: span 2;
         }
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
+    <img src="image.png" alt="Logo" class="logo">
     <div class="calculator">
         <input type="text" class="display" id="display" disabled>
         <div class="buttons">
