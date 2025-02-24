@@ -99,7 +99,7 @@
 <body>
     <div class="iphone">
         <div class="status-bar">
-            <span>9:41</span>
+            <span id="clock">9:41</span>
             <span>📶 🔔 🔋</span>
         </div>
         <div class="calculator" id="calculator">
@@ -133,6 +133,19 @@
     </div>
     
     <script>
+        // Função para atualizar a hora
+        function updateClock() {
+            const clockElement = document.getElementById("clock");
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            clockElement.textContent = `${hours}:${minutes}`;
+        }
+
+        // Atualiza o relógio a cada minuto
+        setInterval(updateClock, 60000);
+        updateClock(); // Inicializa com a hora correta
+
         function addToDisplay(value) {
             document.getElementById("display").value += value;
         }
